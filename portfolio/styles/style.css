@@ -51,7 +51,10 @@ body header {
   overflow: visible;
 }
 body header h1 {
-  font-size: 28px;
+  font-size: 42px;
+  font-family: "Amatic SC", sans-serif;
+  font-weight: 700;
+  letter-spacing: 6%;
 }
 body header .menu-btn {
   padding-top: 0.5rem;
@@ -108,6 +111,7 @@ body header #burger-menu ul li a {
 @media only screen and (min-width: 768px) {
   body header #burger-menu ul li a {
     color: #ffffff;
+    font-size: 14px;
   }
 }
 body header #burger-menu ul li a:hover {
@@ -149,7 +153,7 @@ body main {
   text-align: center;
   position: absolute;
   top: 18vh;
-  padding: 1rem;
+  padding: 2rem;
   color: #ffffff;
   max-width: 100%;
   overflow-x: hidden;
@@ -217,6 +221,7 @@ body main .about #job {
 }
 body main .about #job h2 {
   color: #D6B6FB;
+  font-size: 22px;
 }
 body main .about p {
   padding-top: 1rem;
@@ -236,10 +241,10 @@ body main .about p {
     align-items: start;
   }
   body main .about #job .second {
-    color: #9a44fc;
+    color: #d444fc;
   }
   body main .about p {
-    width: 100%;
+    width: 80%;
   }
 }
 @media only screen and (min-width: 768px) {
