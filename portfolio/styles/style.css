@@ -1,0 +1,283 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Comfortaa", sans-serif;
+}
+
+.active {
+  display: block !important;
+}
+
+.btn {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: none;
+  transition: 0.3s ease-in-out;
+}
+.btn:hover {
+  color: #00FF1A;
+}
+
+.no-visible {
+  display: none;
+}
+
+body {
+  background-color: #160825;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow-x: hidden;
+}
+body header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #160825;
+  color: #ffffff;
+  padding-top: 2rem;
+  padding-bottom: 0;
+  position: sticky;
+  width: 100%;
+  z-index: 10;
+  top: 0;
+  max-height: 15vh;
+  overflow: visible;
+}
+body header h1 {
+  font-size: 28px;
+}
+body header .menu-btn {
+  padding-top: 0.5rem;
+  transition: 0.3s ease-in-out;
+}
+body header .menu-btn:hover {
+  color: #00FF1A;
+}
+body header .menu-btn #menu-span {
+  opacity: 0;
+}
+body header .menu-btn:hover #menu-span {
+  opacity: 100;
+}
+@media only screen and (min-width: 768px) {
+  body header .menu-btn {
+    display: none;
+  }
+}
+body header #burger-menu {
+  position: fixed;
+  z-index: 90;
+  background-color: #ffffff;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  padding-top: 4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  gap: 3rem;
+}
+body header #burger-menu .menu-close {
+  padding-bottom: 3rem;
+}
+body header #burger-menu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  text-align: center;
+  gap: 1rem;
+  font-size: 16px;
+}
+body header #burger-menu ul li {
+  color: #ffffff;
+  list-style: none;
+  text-align: start;
+}
+body header #burger-menu ul li a {
+  text-decoration: none;
+  color: #160825;
+  transition: 0.3s ease-in-out;
+}
+@media only screen and (min-width: 768px) {
+  body header #burger-menu ul li a {
+    color: #ffffff;
+  }
+}
+body header #burger-menu ul li a:hover {
+  text-decoration: underline;
+  color: #00FF1A;
+}
+@media only screen and (min-width: 768px) {
+  body header #burger-menu ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 768px) {
+  body header #burger-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #160825;
+    display: flex;
+    position: relative;
+    z-index: 10;
+    width: 80%;
+    padding: 1rem;
+  }
+  body header #burger-menu .menu-close {
+    display: none;
+  }
+}
+body main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: absolute;
+  top: 18vh;
+  padding: 1rem;
+  color: #ffffff;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+body main #my-photo-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+body main #my-photo-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: no-repeat center/contain url("../images/circle.png");
+  border-radius: 50%;
+  transition: transform 1s linear;
+  z-index: 0;
+}
+body main #my-photo-box img {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  z-index: 1;
+}
+body main #my-photo-box:hover::before {
+  transform: rotate(360deg);
+}
+@media only screen and (min-width: 768px) {
+  body main #my-photo-box {
+    width: 200px;
+    height: 200px;
+  }
+}
+body main .about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  text-align: center;
+}
+body main .about #job {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 1rem;
+  gap: 0.5rem;
+}
+body main .about #job h2 {
+  color: #D6B6FB;
+}
+body main .about p {
+  padding-top: 1rem;
+}
+@media only screen and (min-width: 768px) {
+  body main .about {
+    width: 40%;
+    align-items: start;
+    text-align: start;
+  }
+  body main .about #job {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    align-items: start;
+  }
+  body main .about #job .second {
+    color: #9a44fc;
+  }
+  body main .about p {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  body main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+  }
+}
+body footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  color: #ffffff;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 2rem 1rem;
+}
+body footer #socials a {
+  color: #ffffff;
+  list-style: none;
+  text-align: start;
+}
+@media only screen and (min-width: 768px) {
+  body footer {
+    width: 70%;
+  }
+  body footer #socials {
+    gap: 1rem;
+  }
+  body footer #socials a i {
+    width: 40px;
+    height: auto;
+  }
+}/*# sourceMappingURL=style.css.map */

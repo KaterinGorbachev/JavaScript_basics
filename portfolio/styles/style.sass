@@ -1,0 +1,247 @@
+@use "./config"
+    
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-family: "Comfortaa", sans-serif
+
+.active
+    display: block!important
+
+.btn 
+    cursor: pointer
+    outline: none
+    border: none
+    background: none
+    transition: .3s ease-in-out
+    
+    &:hover
+        color: config.$hover-color
+
+.no-visible
+    display: none
+
+body 
+    background-color: config.$dark-background-color
+    @include config.flexCenter()
+    
+    
+    overflow-x: hidden
+    
+    header
+        
+        @include config.flexCenter()
+        background-color: config.$dark-background-color
+        color: config.$dark-text-color
+        padding-top: 2rem
+        padding-bottom: 0
+        position: sticky
+        width: 100%
+        z-index: 10
+        top: 0
+        max-height: 15vh
+        overflow: visible
+
+        h1
+            font-size: 28px
+        
+
+        .menu-btn
+            padding-top: 0.5rem
+            transition: .3s ease-in-out
+
+            &:hover
+                color: config.$hover-color
+
+            #menu-span
+                opacity: 0
+
+            &:hover #menu-span
+                opacity: 100
+
+            @media only screen and (min-width: 768px)
+                display: none
+            
+           
+            
+
+        #burger-menu
+            //@include config.flexCenter($vertical: start)
+            
+            position: fixed
+            z-index: 90
+            background-color: config.$dark-text-color
+            top: 0
+            width: 100%
+            height: 100vh
+            padding-top: 4rem
+            padding-left: 2rem
+            padding-right: 2rem
+            gap: 3rem
+
+            .menu-close
+                padding-bottom: 3rem
+                    
+            ul
+                @include config.flexCenter($vertical: start)
+                gap: 1rem
+                font-size: 16px
+                li
+                    @include config.resetLink()
+                    a
+                        text-decoration: none
+                        color: config.$dark-background-color
+                        transition: .3s ease-in-out
+                        @media only screen  and (min-width: 768px)
+                            color: config.$dark-text-color
+
+                        &:hover
+                            text-decoration: underline
+                            color: config.$hover-color
+                
+                @media only screen  and (min-width: 768px)
+
+                    @include config.flexRow()
+                    
+
+            @media only screen  and (min-width: 768px)
+                @include config.flexCenter()
+                background-color: config.$dark-background-color
+                
+                display: flex
+                position: relative
+                z-index: 10
+                width: 80%
+                padding: 1rem
+
+                .menu-close
+                    display: none
+                
+
+
+    main
+        @include config.flexCenter()
+        position: absolute
+        
+        top: 18vh
+        padding: 1rem
+        color: config.$dark-text-color
+        max-width: 100%
+        overflow-x: hidden
+        overflow-y: auto 
+
+        #my-photo-box
+            @include config.flexCenter()
+            position: relative
+            width: 150px
+            height: 150px
+            border-radius: 50%
+            overflow: hidden
+
+            // The spinning background
+            &::before
+                content: ""
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                background: no-repeat center/contain url("../images/circle.png") 
+                border-radius: 50%
+                transition: transform 1s linear
+                z-index: 0
+
+            // Inner photo
+            img
+                position: relative
+                width: 80%
+                height: 80%
+                border-radius: 50%
+                object-fit: cover
+                object-position: center
+                z-index: 1
+
+            &:hover::before
+                transform: rotate(360deg)
+
+            @media only screen  and (min-width: 768px)
+                width: 200px
+                height: 200px
+                               
+        .about
+
+            @include config.flexCenter($vertical: start)
+        
+        
+            #job
+                @include config.flexCenter()
+                
+                padding-top: 1rem
+                gap: 0.5rem
+                
+                h2
+                
+                    color: config.$h2-color
+                
+
+            p
+                padding-top: 1rem
+
+            @media only screen  and (min-width: 768px)
+                width: 40%
+                align-items: start
+                text-align: start
+                #job
+                    @include config.flexRow()
+                    align-items: start
+
+                    .second
+                        color: config.$h2-second-color
+
+                p
+                    width: 100%
+                
+
+
+
+        @media only screen  and (min-width: 768px)
+            @include config.flexRow()
+            gap: 2rem
+
+
+    footer
+        @include config.flexRow($gorizontal: space-between)
+        color: config.$dark-text-color
+        position: absolute
+        width: 100%
+        bottom: 0
+        padding: 2rem 1rem
+        #socials
+            a
+                @include config.resetLink()
+
+        @media only screen  and (min-width: 768px)
+            width: 70%
+
+            #socials
+                gap: 1rem
+
+                a
+
+                    i
+                        width: 40px
+                        height: auto
+        
+
+        
+            
+                
+
+    
+    
+
+        
+
+    
+    
