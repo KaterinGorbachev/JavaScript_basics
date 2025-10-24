@@ -1,0 +1,95 @@
+@use 'configuration'
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+body
+    background: center / cover no-repeat url('https://cdn.wallpapersafari.com/25/97/c8gIdy.png'), #ff7301
+
+
+#sakura-fall
+    position: fixed
+    background: right no-repeat url('https://static.wixstatic.com/media/390523_84e854a7f7554ab7981a230a4e6e1ae4~mv2.gif')
+    height: 30vh
+    width: 100vw
+        
+    
+main
+    
+    @include configuration.flexColumn(start, start)  
+    gap: 2rem
+    padding-left: 4rem  
+    padding-top: 3rem
+    min-height: 100vh
+    position: relative
+    
+    font-family: "Exo", sans-serif 
+    color: white
+    font-size: 1rem
+
+
+    h1
+        font-family: "Permanent Marker", cursive
+        font-weight: 400
+        font-style: normal
+        font-size: 4rem
+        color: configuration.$color-headers
+
+    #opciones
+        width: 80vw
+        gap: 2rem
+        @include configuration.flexRow($vertical: space-between, $gorisontal: start)
+        
+        #clanes
+
+            @include configuration.resetSelector($width: 300px)
+            box-shadow: 0px 4px 4px 0 configuration.$color-lines
+
+        #res
+            @include configuration.resetSelector($width: 80px)
+            box-shadow: 0px 4px 4px 0 configuration.$color-lines
+    
+    #personajes
+
+        @include configuration.flexRow($vertical:center, $gorisontal:start)
+        flex-wrap: wrap
+        gap: 1rem
+        width: 50vw
+        padding: 1rem
+            
+        .info
+            @include configuration.flexColumn
+                
+            .img-box
+                display: flex
+                align-items: center
+                justify-content: center                    
+                width: 100px
+                height: 100px
+                border-radius: 50%
+                overflow: hidden
+                background-color: #fc83a1
+                
+
+                img
+                    scale: 1.5
+                    object-fit: cover
+                    width: 100%
+
+            p
+                max-width: 110px
+                min-height: 44px
+                font-size: 14px
+                word-break: break-all 
+                overflow-wrap: break-word
+                white-space: normal
+
+            
+            
+            
+
+
+
+    

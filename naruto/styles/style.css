@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: center/cover no-repeat url("https://cdn.wallpapersafari.com/25/97/c8gIdy.png"), #ff7301;
+}
+
+#sakura-fall {
+  position: fixed;
+  background: right no-repeat url("https://static.wixstatic.com/media/390523_84e854a7f7554ab7981a230a4e6e1ae4~mv2.gif");
+  height: 30vh;
+  width: 100vw;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 2rem;
+  padding-left: 4rem;
+  padding-top: 3rem;
+  min-height: 100vh;
+  position: relative;
+  font-family: "Exo", sans-serif;
+  color: white;
+  font-size: 1rem;
+}
+main h1 {
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4rem;
+  color: white;
+}
+main #opciones {
+  width: 80vw;
+  gap: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: space-between;
+}
+main #opciones #clanes {
+  outline: none;
+  border: none;
+  width: 300px;
+  height: auto;
+  background-color: #ffffff;
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 40px;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px 0 #ba003b;
+}
+main #opciones #res {
+  outline: none;
+  border: none;
+  width: 80px;
+  height: auto;
+  background-color: #ffffff;
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 40px;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px 0 #ba003b;
+}
+main #personajes {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 50vw;
+  padding: 1rem;
+}
+main #personajes .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main #personajes .info .img-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #fc83a1;
+}
+main #personajes .info .img-box img {
+  scale: 1.5;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+main #personajes .info p {
+  max-width: 110px;
+  min-height: 44px;
+  font-size: 14px;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+}/*# sourceMappingURL=style.css.map */

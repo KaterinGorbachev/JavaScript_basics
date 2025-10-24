@@ -1,0 +1,30 @@
+@mixin flexColumn($vertical:center, $gorisontal:center)
+    display: flex
+    flex-direction: column
+    justify-content: $vertical
+    align-items: $gorisontal 
+
+@mixin flexRow($vertical:center, $gorisontal:center)
+    display: flex
+    flex-direction: row
+    justify-content: $gorisontal 
+    align-items: $vertical 
+
+    
+@mixin resetSelector($color-border: none, $width: auto, $height: auto, $background: #ffffff)
+    outline: none
+    border: $color-border
+    width: $width
+    height: $height
+    background-color: $background
+    font-size: 1rem
+    padding: 1rem
+    border-radius: 40px
+    cursor: pointer
+
+
+
+$color-headers: white
+$color-lines: #ba003b
+
+    
