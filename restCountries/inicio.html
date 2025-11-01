@@ -16,14 +16,23 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
 
     <!--my script-->
-    <script src="./scripts/script.js" defer></script>
+    
+    <script type="module" src="./scripts/script.js" defer></script>
 
     <title>Banderas</title>
 </head>
 <body>
     <main>
         <h1>Sobre pais</h1>
-        <input type="text" id="pais" placeholder="Escribe por ejemplo: Spain">
+        
+        <div id="list-countries-box">
+            <input type="text" id="pais" placeholder="Escribe nombre del pais en Inglés: Spain">
+            <ul id="list-countries">
+                <!--fulfill from js-->
+
+            </ul>
+
+        </div>
         <div class="container">
         <!--fulfill from js-->
         

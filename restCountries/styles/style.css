@@ -16,14 +16,51 @@ main {
   gap: 2rem;
   font-size: 22px;
 }
-main input {
-  outline: none;
+main #list-countries-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 250px;
+  height: -moz-max-content;
+  height: max-content;
+  position: relative;
+  z-index: 2;
+  overflow-y: visible;
+}
+main #list-countries-box input {
+  position: relative;
+  z-index: 10;
+  outline: none;
+  width: 300px;
   height: 40px;
   padding: 0.5rem;
+  border: solid 1px grey;
 }
-main input:hover {
+main #list-countries-box input:hover {
   border: solid 2px green;
+}
+main #list-countries-box #list-countries {
+  top: 100%;
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  z-index: 4;
+  width: 300px;
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: #f7fff9;
+  outline: none;
+}
+main #list-countries-box #list-countries li {
+  list-style: none;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  outline: none;
+}
+main #list-countries-box #list-countries li:hover {
+  color: green;
 }
 main .container {
   display: flex;
@@ -37,4 +74,12 @@ main .container .img-box img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
+}
+@media only screen and (min-width: 300px) and (max-width: 900px) {
+  main .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }/*# sourceMappingURL=style.css.map */

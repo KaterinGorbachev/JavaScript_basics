@@ -25,13 +25,48 @@ main
     padding: 6rem
     gap: 2rem
     font-size: 22px
-    input
-        outline: none
+    
+
+    #list-countries-box
+        @include displayFlexColumn()
+
         width: 250px
-        height: 40px
-        padding: .5rem
-        &:hover
-            border: solid 2px green
+        height: max-content
+        position: relative
+        z-index: 2
+        overflow-y: visible
+        
+        input
+            position: relative
+            z-index: 10
+            outline: none
+            width: 300px
+            height: 40px
+            padding: .5rem
+            border: solid 1px grey
+            &:hover
+                border: solid 2px green
+                
+        #list-countries
+            top: 100%  
+            display: none
+            flex-direction: column 
+            position: absolute
+            z-index: 4
+            width: 300px
+            max-height: 300px
+            overflow-y: auto
+            background-color: #f7fff9
+            outline: none
+            
+            li
+                list-style: none
+                text-decoration: none
+                cursor: pointer
+                padding: 0.5rem
+                outline: none
+                &:hover
+                    color: green
 
     .container
         @include displayFlexRow()
@@ -44,5 +79,7 @@ main
                 object-fit: cover
                 width: 100%
         
+        @media only screen and (min-width: 300px) and (max-width: 900px)
+            @include displayFlexColumn()
 
 
