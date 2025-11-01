@@ -52,7 +52,7 @@ export const list_countries = [
 
     { code: "BT", name: "Bhutan" },
 
-    { code: "BO", name: "Bolivia (Plurinational State of)" },
+    { code: "BO", name: "Bolivia" },
 
     { code: "BQ", name: "Bonaire, Sint Eustatius and Saba" },
 
@@ -101,8 +101,6 @@ export const list_countries = [
     { code: "KM", name: "Comoros" },
 
     { code: "CG", name: "Congo" },
-
-    { code: "CD", name: "Congo (Democratic Republic of the)" },
 
     { code: "CK", name: "Cook Islands" },
 
@@ -208,7 +206,7 @@ export const list_countries = [
 
     { code: "ID", name: "Indonesia" },
 
-    { code: "IR", name: "Iran (Islamic Republic of)" },
+    { code: "IR", name: "Iran" },
 
     { code: "IQ", name: "Iraq" },
 
@@ -234,9 +232,9 @@ export const list_countries = [
 
     { code: "KI", name: "Kiribati" },
 
-    { code: "KP", name: "Korea (Democratic People's Republic of)" },
+    { code: "KP", name: "North Korea" },
 
-    { code: "KR", name: "Korea (Republic of)" },
+    { code: "KR", name: "South Korea" },
 
     { code: "KW", name: "Kuwait" },
 
@@ -288,9 +286,9 @@ export const list_countries = [
 
     { code: "MX", name: "Mexico" },
 
-    { code: "FM", name: "Micronesia (Federated States of)" },
+    { code: "FM", name: "Micronesia" },
 
-    { code: "MD", name: "Moldova (Republic of)" },
+    { code: "MD", name: "Moldova" },
 
     { code: "MC", name: "Monaco" },
 
@@ -338,7 +336,7 @@ export const list_countries = [
 
     { code: "PW", name: "Palau" },
 
-    { code: "PS", name: "Palestine, State of" },
+    { code: "PS", name: "Palestine" },
 
     { code: "PA", name: "Panama" },
 
@@ -434,7 +432,7 @@ export const list_countries = [
 
     { code: "SY", name: "Syrian Arab Republic" },
 
-    { code: "TW", name: "Taiwan, Province of China[a]" },
+    { code: "TW", name: "Taiwan" },
 
     { code: "TJ", name: "Tajikistan" },
 
@@ -486,13 +484,11 @@ export const list_countries = [
 
     { code: "VU", name: "Vanuatu" },
 
-    { code: "VE", name: "Venezuela (Bolivarian Republic of)" },
+    { code: "VE", name: "Venezuela" },
 
     { code: "VN", name: "Viet Nam" },
 
-    { code: "VG", name: "Virgin Islands (British)" },
-
-    { code: "VI", name: "Virgin Islands (U.S.)" },
+    { code: "VI", name: "Virgin Islands" },
 
     { code: "WF", name: "Wallis and Futuna" },
 

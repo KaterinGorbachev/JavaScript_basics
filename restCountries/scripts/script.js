@@ -4,12 +4,13 @@ const api = 'https://restcountries.com/v3.1/name'
 const pais_input_field = document.getElementById('pais')
 const data_div = document.querySelector('.container')
 const list_countries = document.getElementById('list-countries')
+const fragment = document.createDocumentFragment()
 
 const check_empty_string = (input_field)=>{
     // if validation functions are only ever called on form .value
     //  don’t need to check typeof str !== 'string'
     if (input_field.value.trim() == ''){
-        return { valid: false, error: 'Olvidaste ingresar algo 🚨' };
+        return { valid: false, error: 'Olvidaste ingresar algo 🚨' }
         
     }
     return { valid: true };
@@ -114,7 +115,7 @@ pais_input_field.addEventListener('input', () => {
         hint_countries.forEach(country => {
             const li = document.createElement('li');
             li.textContent = country.name;
-            list_countries.appendChild(li);
+            fragment.appendChild(li);
             li.style.display = ''
             li.addEventListener('mousedown', (e) => {
                 e.preventDefault(); 
@@ -124,6 +125,8 @@ pais_input_field.addEventListener('input', () => {
             });
         });
         anyVisible = true;
+        list_countries.appendChild(fragment)
+
         
     } 
     list_countries.style.display = anyVisible ? 'flex' : 'none';
