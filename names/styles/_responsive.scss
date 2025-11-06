@@ -1,0 +1,60 @@
+@mixin responsive($ancho){
+    @if $ancho == sm{
+        @media (max-width: 799px){
+
+            .theme-toggle {
+                width: 50px;
+                height: 25px;
+            }
+
+            .slider::before {
+                height: 13px;
+                width: 13px;
+
+            }
+
+            
+            main {
+                height: 100%;
+                min-height: 100vh;
+                overflow-y: auto;
+                overflow-x: hidden;
+                padding: 2rem;
+
+                h1 {
+                    font-size: 1.35rem;
+                    max-width: 300px;
+                }
+
+                #contenido {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 10px;
+                    #opciones,
+                    #name-inpt, #btn {
+                        font-size: 1rem;
+                        line-height: 1.125rem;
+                        width: 200px;
+                        padding: 10px;
+                        height: 60px;
+                        border-radius: 10px;
+                                }
+                            }
+                #resultado {
+                    font-size: 1rem;
+                    font-family: "Roboto", sans-serif;
+                    text-align: center;
+                    max-width: 300px;
+
+
+                }        
+                        
+                        
+            }
+        }
+    }
+                
+
+                
+}

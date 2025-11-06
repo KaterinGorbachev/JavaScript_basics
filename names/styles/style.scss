@@ -1,0 +1,236 @@
+@use './responsive';
+
+
+$fondo: #f5f5f4;
+$btn: #22bf6b;
+$fondo_punto_rojo: #eb3b5a;
+$fondo_punto_naranja: #f08956;
+$color_texto: #444444;
+$toggle-width: 90px;
+$knob-width: 30px;
+
+
+// -------------------------------------
+// Theme setup
+// -------------------------------------
+
+$themes: (
+  light: (
+    text: $color_texto,
+    bg: $fondo,
+    
+  ),
+  dark: (
+    text: $fondo,
+    bg: $color_texto,
+  ),
+);
+
+// -------------------------------------
+// Theming system
+// -------------------------------------
+@mixin themify($themes) {
+  @each $name, $values in $themes {
+    // attach theme class to the same element using "&"
+    &.#{$name}-theme {
+      $theme-map: $values !global;
+      @content;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
+
+// -------------------------------------
+// Global styles
+// -------------------------------------
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Toggle container */
+.theme-toggle {
+  position: relative;
+  width: $toggle-width;
+  height: 40px;
+}
+
+/* Hide the checkbox */
+.theme-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+  outline: none;
+}
+
+/* Slider background */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 80px;
+  background: url('../images/toggle-day.svg') center / contain no-repeat, linear-gradient(82deg, #77C2D0 10.28%, #3D91A7 100%);
+  box-shadow: -2px 4px 14px 0 rgba(0, 0, 0, 0.30) inset;
+  
+  transition: background .5s ease;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px;
+  overflow: hidden;
+}
+
+/* Knob */
+.slider::before {
+  content: "";
+  position: absolute;
+  height: $knob-width;
+  width: $knob-width;
+  left: 4px;
+  bottom: 4px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  transition: transform .2s ease;
+  z-index: 2;
+}
+
+/* Sun & moon icons */
+.icon {
+  font-size: 18px;
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity ease;
+}
+
+.sun {
+  color: #facc15;
+  opacity: 1;
+}
+
+.moon {
+  color: #f1f5f9;
+  opacity: 0;
+}
+
+/* Checked state (dark mode) */
+input:checked + .slider {
+  
+  background: url('../images/Toggle-night.svg') center / contain no-repeat, linear-gradient(82deg, #041326 10.28%, #0E314C 100%);
+  
+}
+
+input:checked + .slider::before {
+  transform: translateX(calc(#{$toggle-width} - #{$knob-width} - 8px));
+}
+
+/*input:checked + .slider .sun {
+  opacity: 0;
+}
+
+input:checked + .slider .moon {
+  opacity: 1;
+}*/
+
+// -------------------------------------
+// Main section
+// -------------------------------------
+main {
+  min-width: 100vw;
+  max-height: 100vh;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding: 4rem;
+  gap: 2rem;
+  font-family: "Fauna One", serif;
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 1.25em;
+    max-width: 800px;
+    width: 100%;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  #opciones,
+  #name-inpt {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    width: 250px;
+    padding: 0.5rem;
+    height: 60px;
+    outline: none;
+    border: none;
+  }
+
+  #opciones {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    cursor: pointer;
+   
+  }
+
+  
+    
+      
+
+  #btn {
+    font-size: 1.125rem;
+    width: 70px;
+    height: 60px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: $btn;
+    color: $fondo;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    &:hover {
+      background-color: $fondo_punto_naranja;
+
+    }
+
+  }
+
+  #resultado {
+    font-size: 1.75rem;
+    font-family: "Roboto", sans-serif;
+
+
+  }
+
+  // Theming for main.light-theme and main.dark-theme
+  @include themify($themes) {
+    background-color: themed("bg");
+    color: themed("text");
+    #opciones{
+      background-color: themed("text");
+      color: themed("bg");
+   
+
+    }
+
+    
+  }
+
+  
+}
+
+@include responsive.responsive(sm)
+

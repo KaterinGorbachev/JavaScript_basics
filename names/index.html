@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fauna+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <script src="script.js" defer></script>
+
+    <title>Names</title>
+</head>
+<body>
+    <main class="light-theme">
+        <label class="theme-toggle" aria-label="Toggle between light and dark mode">
+            <input type="checkbox" id="theme-toggle" role="switch" aria-checked="false">
+            <span class="slider">
+                <!--<span class="icon sun">☀️</span>
+                <span class="icon moon">🌙</span>-->
+            </span>
+        </label>
+        <h1 >¡Vamos a predecir tu Edad, Nacionalidad o Género!</h1>
+        <div id="contenido">
+            <select id="opciones">
+                <option value="" disabled selected hidden>Selecciona una opción</option>
+                <option value="genero">Género
+                </option>
+                <option value="pais">Nacionalidad
+                </option>
+                <option value="edad">Edad
+                </option>
+            </select>
+            <input type="text" id="name-inpt" placeholder="Escribe un nombre">
+            <button id="btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            
+        </div>
+        <p id="resultado"></p>
+    </main>
+    
+</body>
+</html>
